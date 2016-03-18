@@ -1,5 +1,4 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,13 +7,20 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<link rel="stylesheet" href="css/blog.css">
 	<title>Te Amo</title>   
+
+
+
+<!-- 	<div class="page-header">
+		<h1><a href="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12745447_10206761886940589_2524652319114239422_n.jpg?oh=dc56c74cb9073be0f71de59c990d6106&oe=57870DB2">Te Amo Melany</a></h1>
+	</div> -->
 	</head>
 	
 
 
 <body>
+
 	<div id="particles-js"></div>
 
 	<header>
@@ -38,17 +44,23 @@
 	
 	
 
-	<div class="principal contenedoraa">
+	<div class="principal contenedor">
         <div class="row">
-            <!-- <div class="col-md-8"> -->
-                {% block content %}
-                {% endblock %}
-            <!-- </div> -->
+            <div class="col-md-8">
+                   <div class="post">
+                        <h1><a>{{ post.titulo }}</a></h1>
+                        <p>{{ post.texto|linebreaks }}</p>
+						<div class="date">
+						<p>publicado por {{ post.autor }}. {{ post.fecha_publicado }}</p>
+						</div>
+            		</div>
+			</div>
         </div>
    	</div>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="particles.js"></script>
 	<script src="particulas.js"></script>
+
 </body>
 
 </html>
